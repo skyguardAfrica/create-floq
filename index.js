@@ -51,7 +51,7 @@ function createProjectDir(config) {
         // Install packages
         spawn.sync('deno', ['install']);
         // Run lifecyle scripts
-        spawn.sync('deno', ['task', 'postinstall'], { stdio: 'inherit'});
+        spawn.sync('deno', ['task', 'postinstall'], { stdio: 'ignore' });
     } else if (config.runtime === "Node") {
         // Copy floq main file
         const templateDir = path.resolve(__dirname, "floq", "node");
@@ -79,5 +79,4 @@ async function createFloqApp() {
     const promptConfig = await startPrompt();
     createProjectDir(promptConfig);
 }
-
 createFloqApp();
