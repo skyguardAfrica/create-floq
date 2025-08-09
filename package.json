@@ -1,14 +1,14 @@
 {
   "name": "create-floq",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
-  "homepage": "https://github.com/skyguardAfrica/floq#readme",
+  "homepage": "https://github.com/skyguardAfrica/create-floq#readme",
   "bugs": {
-    "url": "https://github.com/skyguardAfrica/floq/issues"
+    "url": "https://github.com/skyguardAfrica/create-floq/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyguardAfrica/floq.git"
+    "url": "git+https://github.com/skyguardAfrica/create-floq.git"
   },
   "license": "MIT",
   "author": "Machar Kook",
