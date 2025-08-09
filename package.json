@@ -1,0 +1,27 @@
+{
+  "name": "create-floq",
+  "version": "0.0.2",
+  "description": "",
+  "homepage": "https://github.com/skyguardAfrica/floq#readme",
+  "bugs": {
+    "url": "https://github.com/skyguardAfrica/floq/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyguardAfrica/floq.git"
+  },
+  "license": "MIT",
+  "author": "Machar Kook",
+  "type": "commonjs",
+  "main": "index.js",
+  "bin": {
+    "floq": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.6",
+    "inquirer": "^12.9.0"
+  }
+}
