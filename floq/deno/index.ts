@@ -3,7 +3,7 @@ import { OpenAPIHono } from "@hono/zod-openapi";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 
-export function startApp() {
+if (import.meta.main) {
 	const rootApp = new OpenAPIHono();
 	// Global middleware
 	rootApp
