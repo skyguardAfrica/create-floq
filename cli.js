@@ -21,7 +21,7 @@ function isFloqProject() {
 	let floqIndex;
 	if (floqRuntime === 'Deno') {
 		floqIndex = path.resolve(currentDir, 'floq', 'index.ts');
-	} else if (floqRuntime === "Javascript") {
+	} else if (floqRuntime === "Node") {
 		floqIndex = path.resolve(currentDir, 'floq', 'index.js');
 	} else {
 		return false;
@@ -35,7 +35,7 @@ function isFloqProject() {
 }
 
 function runDevServer() {
-	// Check if current folder has a valid floq project to initialize in dev mode
+	// Check if current folder is a valid floq app/project 
 	if (!isFloqProject()) {
 		console.log("This is not a floq app/project\nRun npm create floq@latest to initialize the project");
 		return false;
@@ -65,7 +65,6 @@ yargs()
 
 		})
 	}, function (argv) {
-		console.log('hello', argv.name, 'Starting local dev server!');
 		runDevServer();
 	})
 	.command('deploy [name]', 'welcome ter yargs!', (yargs) => {

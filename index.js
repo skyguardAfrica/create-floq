@@ -46,16 +46,6 @@ function createProjectDir(config) {
             JSON.stringify(projectDenoJson, null, 2)
         )
 
-        // Copy floq.json
-        const floqJsonPath = path.resolve(__dirname, "floq", "floq.json")
-        const floqJson = require(floqJsonPath);
-        floqJson.name = config.projectName;
-        floqJson.runtime = config.runtime;
-        fs.writeFileSync(
-            path.join(projectDir, "floq.json"),
-            JSON.stringify(floqJson, null, 2)
-        )
-
         // Move to projectDir and install packages
         process.chdir(path.resolve(projectDir))
         // Install packages
@@ -76,7 +66,23 @@ function createProjectDir(config) {
             path.join(projectDir, "package.json"),
             JSON.stringify(projectPackageJson, null, 2)
         )
+        // Move to projectDir and install packages
+        process.chdir(path.resolve(projectDir))
+        // Install packages
+        spawn.sync('npm', ['install']);
+        // Run lifecyle scripts
+        // spawn.sync('npm', ['task', 'postinstall'], { stdio: 'ignore' });
     }
+    
+    // Copy floq.json
+    const floqJsonPath = path.resolve(__dirname, "floq", "floq.json")
+    const floqJson = require(floqJsonPath);
+    floqJson.name = config.projectName;
+    floqJson.runtime = config.runtime;
+    fs.writeFileSync(
+        path.join(projectDir, "floq.json"),
+        JSON.stringify(floqJson, null, 2)
+    )
 
     // Copy the gitignore file
     fs.copyFileSync(
