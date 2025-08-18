@@ -10,6 +10,8 @@
   "imports": {
     "@effect/platform": "npm:@effect/platform@^0.88.1",
     "@effect/platform-node": "npm:@effect/platform-node@^0.91.0",
+    "@floq/floq": "jsr:@floq/floq@^0.0.2",
+    "@floq/scheduler": "jsr:@floq/scheduler@^0.0.1",
     "@scalar/hono-api-reference": "npm:@scalar/hono-api-reference@^0.5.184",
     "@std/assert": "jsr:@std/assert@1",
     "effect": "npm:effect@^3.16.16",
