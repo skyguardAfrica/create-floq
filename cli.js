@@ -57,25 +57,25 @@ function deployApp() {
 yargs()
 	.scriptName("floq")
 	.usage('$0 <cmd> [args]')
-	.command('dev [name]', 'welcome ter yargs!', (yargs) => {
+	.command('dev [name]', 'Test your app locally before deploying!', (yargs) => {
 		yargs.option('name', {
 			type: 'string',
 			default: 'Port',
-			describe: 'the name to say hello to',
+			describe: 'Build and test your backend before deploying',
 
 		})
 	}, function (argv) {
 		runDevServer();
 	})
-	.command('deploy [name]', 'welcome ter yargs!', (yargs) => {
+	.command('deploy [name]', 'Seamlessly deploy your apps to your VPS easily!', (yargs) => {
 		yargs.option('name', {
 			type: 'string',
 			default: 'Port',
-			describe: 'the name to say hello to',
+			describe: '',
 
 		})
 	}, function (argv) {
-		console.log('hello', argv.name, 'Deploying to custom cloud!')
+		console.log('hello', argv.name, 'Deployment options to your VPS coming soon!')
 		deployApp();
 	})
 	.help()
