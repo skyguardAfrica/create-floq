@@ -1,7 +1,7 @@
 {
   "name": "create-floq",
   "version": "0.0.7",
-  "description": "",
+  "description": "A backend development framework with the ease of serverless with the power and control of a VPS",
   "homepage": "https://github.com/skyguardAfrica/create-floq#readme",
   "bugs": {
     "url": "https://github.com/skyguardAfrica/create-floq/issues"
