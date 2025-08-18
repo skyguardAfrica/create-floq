@@ -37,6 +37,11 @@ function createProjectDir(config) {
         const targetDir = path.resolve(projectDir, "floq");
         fs.cpSync(templateDir, targetDir, { recursive: true });
 
+        // Copy src folder
+        const srcSourceDir = path.resolve(__dirname, "src");
+        const srcDestDir = path.resolve(projectDir, "src");
+        fs.cpSync(srcSourceDir, srcDestDir, { recursive: true});
+
         // Copy deno.json
         const denoJsonPath = path.resolve(__dirname, "floq", "deno.json")
         const projectDenoJson = require(denoJsonPath);
@@ -73,7 +78,7 @@ function createProjectDir(config) {
         // Run lifecyle scripts
         // spawn.sync('npm', ['task', 'postinstall'], { stdio: 'ignore' });
     }
-    
+
     // Copy floq.json
     const floqJsonPath = path.resolve(__dirname, "floq", "floq.json")
     const floqJson = require(floqJsonPath);
