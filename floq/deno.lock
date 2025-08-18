@@ -1,6 +1,8 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@floq/floq@^0.0.2": "0.0.2",
+    "jsr:@floq/scheduler@^0.0.1": "0.0.1",
     "npm:@effect/platform-node@0.91": "0.91.0_@effect+cluster@0.43.1__@effect+platform@0.88.2___effect@3.17.7__@effect+rpc@0.65.2___@effect+platform@0.88.2____effect@3.17.7___effect@3.17.7__@effect+sql@0.42.1___@effect+experimental@0.52.2____@effect+platform@0.88.2_____effect@3.17.7____effect@3.17.7___@effect+platform@0.88.2____effect@3.17.7___effect@3.17.7__@effect+workflow@0.5.1___@effect+platform@0.88.2____effect@3.17.7___@effect+rpc@0.65.2____@effect+platform@0.88.2_____effect@3.17.7____effect@3.17.7___effect@3.17.7__effect@3.17.7_@effect+platform@0.88.2__effect@3.17.7_@effect+rpc@0.65.2__@effect+platform@0.88.2___effect@3.17.7__effect@3.17.7_@effect+sql@0.42.1__@effect+experimental@0.52.2___@effect+platform@0.88.2____effect@3.17.7___effect@3.17.7__@effect+platform@0.88.2___effect@3.17.7__effect@3.17.7_effect@3.17.7",
     "npm:@effect/platform@~0.88.1": "0.88.2_effect@3.17.7",
     "npm:@hono/zod-openapi@~0.18.3": "0.18.4_hono@4.9.0_zod@3.25.76",
@@ -8,6 +10,19 @@
     "npm:@types/node@*": "22.15.15",
     "npm:effect@^3.16.16": "3.17.7",
     "npm:hono@^4.6.13": "4.9.0"
+  },
+  "jsr": {
+    "@floq/floq@0.0.2": {
+      "integrity": "564eeeed8999e03b2f8861cd37f3ead9fc734d45513704acf4c27d406ee2b47c",
+      "dependencies": [
+        "jsr:@floq/scheduler",
+        "npm:@hono/zod-openapi",
+        "npm:hono"
+      ]
+    },
+    "@floq/scheduler@0.0.1": {
+      "integrity": "951baf394e61538f166df37e931acb5cc032341663c11723e279772faef4909b"
+    }
   },
   "npm": {
     "@asteasolutions/zod-to-openapi@7.3.4_zod@3.25.76": {
@@ -419,6 +434,8 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@floq/floq@^0.0.2",
+      "jsr:@floq/scheduler@^0.0.1",
       "jsr:@std/assert@1",
       "npm:@effect/platform-node@0.91",
       "npm:@effect/platform@~0.88.1",

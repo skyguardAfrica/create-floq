@@ -1,4 +1,8 @@
 import process from "node:process";
+
+import { Effect } from "effect";
+import { NodeRuntime, NodeContext } from "@effect/platform-node";
+
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
@@ -6,7 +10,8 @@ import tasks from "../src/main.ts";
 import { createRoute } from "@floq/floq";
 import scheduler from "@floq/scheduler";
 
-if (import.meta.main) {
+// deno-lint-ignore require-yield
+const mainProgram = Effect.gen(function* () {
   const rootApp = new OpenAPIHono();
   // Global middleware
   rootApp
@@ -39,4 +44,8 @@ if (import.meta.main) {
         }
       })
   })
+})
+
+if (import.meta.main) {
+  NodeRuntime.runMain(mainProgram.pipe(Effect.provide(NodeContext.layer)));
 }
