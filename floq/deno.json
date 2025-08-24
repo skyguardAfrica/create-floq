@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "tasks": {
     "dev": "deno run --allow-read --allow-write --allow-net --unstable-kv --allow-ffi --allow-env src/main.ts",
-    "floq-dev": "deno run --allow-net floq/index.ts",
+    "floq-dev": "deno run --allow-env --allow-ffi --allow-net --allow-read floq/index.ts",
     "start": "deno run --allow-read --allow-write --allow-net --unstable-kv --allow-ffi --allow-env src/index.ts",
     "postinstall": "deno install --allow-scripts=npm:msgpackr-extract@3.0.3,npm:@parcel/watcher@2.5.1"
   },
