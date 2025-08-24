@@ -89,8 +89,6 @@ This starter demonstrates how Floq:
 * Supports **nested child routes** (e.g., `/app/home`, `/app/floq`)
 * Lets you start with simple functions and grow into complex backend logicjs
 
-````
-
 ---
 
 ## 🛠 Running Locally
