@@ -79,6 +79,9 @@ function createProjectDir(config) {
         // spawn.sync('npm', ['task', 'postinstall'], { stdio: 'ignore' });
     }
 
+    // Install create-floq globally to make it floq command accessible from the terminal/cmd
+    spawn.sync("npm",["install", "-g", "create-floq@latest"], {stdio: 'inherit'});
+
     // Copy floq.json
     const floqJsonPath = path.resolve(__dirname, "floq", "floq.json")
     const floqJson = require(floqJsonPath);
